@@ -89,7 +89,7 @@ def lc_car_gen(seed, meanmag=None, mag0=None, year=None, tau=None, \
             print 'LC_CAR_GEN: {0} steps out of {1}\r'.format(itime,duration),
             sys.stdout.flush()
 
-        lc[itime] += np.sum(rf[0:itime] * \
+        lc[itime] += np.add.reduce(rf[0:itime] * \
                                 np.exp(-dtj[duration-1-itime:duration-1]/tau))
     print
 
